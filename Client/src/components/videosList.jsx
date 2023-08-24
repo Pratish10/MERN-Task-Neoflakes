@@ -49,7 +49,7 @@ const VideosList = () => {
         sx={{ flexGrow: 1 }}
       >
         {videos.map((video) => (
-          <Grid xs={2} sm={4} md={4} key={video._id}>
+          <Grid item xs={2} sm={4} md={4} key={video._id}>
             <Link to={video.videoUrl}>
               <Cards key={video._id} video={video} />
             </Link>
