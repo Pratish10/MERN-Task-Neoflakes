@@ -4,6 +4,7 @@ import { Button, TextField, Grid, Paper } from "@mui/material";
 import UploadButton from "@mui/joy/Button";
 import { useState } from "react";
 import CircularProgress from "@mui/joy/CircularProgress";
+import { useNavigate } from "react-router-dom";
 
 const FileUploadForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -11,6 +12,7 @@ const FileUploadForm = () => {
   const [video, setVideo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [formValid, setFormValid] = useState(false);
+  const navigate = useNavigate();
 
   const handleThumbnailChange = (e) => {
     const file = e.target.files[0];
@@ -64,11 +66,13 @@ const FileUploadForm = () => {
         }
       );
       alert("Upload successful");
+      navigate("/videoList");
       reset();
       setThumbnail(null);
       setVideo(null);
     } catch (error) {
       console.log("Error uploading file:", error);
+      alert("Error uploading file");
     } finally {
       setLoading(false);
     }
