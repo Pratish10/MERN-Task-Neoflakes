@@ -3,7 +3,7 @@ const cors = require("cors");
 const connectDB = require("./db");
 const cloudinary = require("./Config/cloudinary.js");
 const morgan = require("morgan");
-const fileupload = require("express-fileupload");
+const fileUpload = require("express-fileupload");
 require("dotenv").config();
 const bodyParser = require("body-parser");
 
