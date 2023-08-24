@@ -14,7 +14,7 @@ const VideosList = () => {
     const fetchVideos = async () => {
       try {
         const response = await axios.get(
-          "https://giddy-eel-button.cyclic.cloud/api/video/get-videos"
+          "https://mern-task-neoflakes-backend.onrender.com/api/video/get-videos"
         );
         // console.log(response.data.videos);
         setVideos(response.data.videos);

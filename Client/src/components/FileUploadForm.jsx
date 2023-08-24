@@ -57,7 +57,7 @@ const FileUploadForm = () => {
 
     try {
       await axios.post(
-        "https://giddy-eel-button.cyclic.cloud/api/video/upload",
+        "https://mern-task-neoflakes-backend.onrender.com/api/video/upload",
         formData,
         {
           headers: {
