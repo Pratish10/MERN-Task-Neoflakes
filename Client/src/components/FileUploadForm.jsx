@@ -54,11 +54,15 @@ const FileUploadForm = () => {
     formData.append("videoUrl", data.videoUrl[0]);
 
     try {
-      await axios.post("http://localhost:8000/api/video/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://giddy-eel-button.cyclic.cloud/api/video/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Upload successful");
       reset();
       setThumbnail(null);
