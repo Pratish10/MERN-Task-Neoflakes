@@ -55,15 +55,15 @@ const uploadVideo = asyncHandler(async (req, res) => {
 
 const getVideos = asyncHandler(async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const perPage = 10;
+    // const page = parseInt(req.query.page) || 1;
+    // const perPage = 10;
 
-    const totalCount = await Video.countDocuments();
+    // const totalCount = await Video.countDocuments();
 
-    const totalPages = Math.ceil(totalCount / perPage);
-    const offset = (page - 1) * perPage;
+    // const totalPages = Math.ceil(totalCount / perPage);
+    // const offset = (page - 1) * perPage;
 
-    const videos = await Video.find({}).skip(offset).limit(perPage).lean();
+    const videos = await Video.find({}).lean();
 
     res.status(200).json({
       videos: videos,
